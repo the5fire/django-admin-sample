@@ -1,7 +1,9 @@
 # Django settings for novel project.
+from os import path
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+ROOT_PATH = path.abspath(path.dirname(__name__))
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -112,6 +114,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    path.join(ROOT_PATH, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -129,6 +132,8 @@ INSTALLED_APPS = (
     'book',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'xadmin',
+    'reversion',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
