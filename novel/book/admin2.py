@@ -4,12 +4,15 @@ from django.contrib import admin
 import djadmin2
 
 from .models import Book, Category
+from .form import BookForm
 
 
 class BookAdmin(djadmin2.ModelAdmin):
     search_fields = ('name', 'alias')
     fields = ('name', 'alias', 'desc', 'category', 'tags', 'status',)
     list_display = ('name', 'category', 'create_time')
+
+    form = BookForm
 
     list_per_page = 15
     save_on_top = True

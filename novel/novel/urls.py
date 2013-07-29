@@ -3,8 +3,9 @@ from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
 
-#import xadmin
-#xadmin.autodiscover()
+# 开启 xadmin之后django自带的admin不可用
+import xadmin
+xadmin.autodiscover()
 
 from django.contrib import admin
 admin.autodiscover()
@@ -15,7 +16,7 @@ djadmin2.default.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'book.views.index', name='index'),
-    #url(r'^xadmin/', include(xadmin.site.urls)),
+    url(r'^xadmin/', include(xadmin.site.urls)),
     url(r'^admin2/', include(djadmin2.default.urls)),
     url(r'^admin/', include(admin.site.urls)),
 )
