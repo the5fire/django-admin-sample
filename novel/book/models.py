@@ -33,3 +33,6 @@ class Book(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    class meta:
+        app_label = u'图书'
