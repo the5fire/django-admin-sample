@@ -118,24 +118,17 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    'book',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'djadmin2',
-    'djadmin2.themes.djadmin2theme_default',
-    'rest_framework', # for the browsable API templates
-    'floppyforms', # For HTML5 form fields
-    'crispy_forms', # Required for the default theme's layout
-    'book',
-    # Uncomment the next line to enable the admin:
-    'django.contrib.admin',
+
     'xadmin',
-    'reversion',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'crispy_forms',
 )
 
 # A sample logging configuration. The only tangible logging
